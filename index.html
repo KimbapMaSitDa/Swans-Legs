@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Swan's Legs</title>
+  <!-- Adobe Fonts: Rocky (Extra Condensed / Condensed / Compressed) + Input Mono -->
+  <link rel="stylesheet" href="https://use.typekit.net/mph8cqw.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400&display=swap">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ============================== HEADER ============================== -->
+<header class="topbar">
+  <div class="topbar-inner">
+    <div class="menubar">
+      <img class="mb-lines" src="figma/header-lines.svg" alt="">
+      <img class="mb-grad" src="figma/header-gradient.png" alt="">
+    </div>
+    <div class="menubar-under"></div>
+    <nav class="menus">
+      <a class="menu-btn gray02" href="#overview" data-tab="overview">Overview</a>
+      <a class="menu-btn gray02" href="#about" data-tab="about">About</a>
+      <a class="menu-btn gray02" href="#store" data-tab="store">Store&lt;3</a>
+      <a class="menu-btn gray02" href="#mypage" data-tab="mypage">My Page</a>
+      <a class="menu-btn gray02" href="#support" data-tab="support">Support</a>
+    </nav>
+    <div class="timer" id="timer">00:00:00</div>
+    <a class="thumb-title" href="#overview" aria-label="Swan's Legs home">
+      <span class="logo-box"><img src="figma/logo.svg" alt="Swan's Legs"></span>
+    </a>
+  </div>
+</header>
+
+<main id="scroller">
+
+<!-- ============================ 1. OVERVIEW ============================ -->
+<section class="page" id="page-overview" data-tab="overview" style="--w:4397">
+  <div class="page-inner"><div class="contents">
+    <p class="rc t-sub grey" style="left:371px; top:164px; width:1178px; text-align:center;">Imagine that you can control your algorithm</p>
+    <p class="rec t-title blue" style="left:371px; top:72px; width:1178px; text-align:center;">Enjoy the swan, we’ll handle the Legs!</p>
+
+    <div class="mov" id="mov">
+      <!-- 영상: site/figma/overview.mp4 -->
+      <video id="mov-video" autoplay muted loop playsinline poster="figma/video-poster.jpg">
+        <source src="figma/overview.mp4" type="video/mp4">
+      </video>
+      <button class="mov-overlay" id="mov-toggle" type="button" aria-label="Unmute video" aria-pressed="false">
+        <!-- muted -->
+        <svg class="ic-muted" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 9v6h4l5 5V4L7 9H3z" stroke="none"/><path d="M14.6 9l6 6M20.6 9l-6 6" fill="none" stroke-width="1.8" stroke-linecap="butt" stroke-linejoin="miter"/></svg>
+        <!-- sound on -->
+        <svg class="ic-sound" viewBox="0 0 24 24" aria-hidden="true"><path stroke="none" d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg>
+      </button>
+    </div>
+
+    <p class="rec t-title blue nowrap" style="left:2073px; top:67px; width:1845px;">Shopping with our Legs S2</p>
+
+    <!-- Right Leg card -->
+    <article class="card-a ov-card" style="left:3059px;">
+      <div class="title-bar"><p class="rcb">Right Leg</p></div>
+      <img class="bag" src="figma/bag-right.png" alt="Swan's Legs right leg" style="left:9.675px; top:37.249px; width:528.343px; height:704.458px; transform:rotate(-4.65deg);">
+      <ul><li> Cleaner feeds</li><li> Safer Images</li><li> Fewer disturbing posts</li><li> Seamless scrolling</li><li> Zero visible human labor</li></ul>
+      <p class="old-price" style="left:554px; top:494px;">$20.00</p>
+      <p class="price" style="left:554px; top:530px; width:357px;">$0.00</p>
+      <img class="vline" src="figma/line-v-overview.svg" alt="" style="left:510px; top:129px; width:561px;">
+      <button class="btn sky01 buy" data-leg="right" style="left:554px; top:618px; width:357px;">Buy now</button>
+    </article>
+
+    <!-- Left Leg card -->
+    <article class="card-a ov-card" style="left:2073px;">
+      <div class="title-bar"><p class="rcb">Left Leg</p></div>
+      <ul><li> Cleaner feeds</li><li> Safer Images</li><li> Fewer disturbing posts</li><li> Seamless scrolling</li><li> Zero visible human labor</li></ul>
+      <p class="old-price" style="left:554px; top:494px;">$20.00</p>
+      <p class="price" style="left:554px; top:530px; width:357px;">$0.00</p>
+      <img class="vline" src="figma/line-v-overview.svg" alt="" style="left:510px; top:129px; width:561px;">
+      <button class="btn sky01 buy" data-leg="left" style="left:554px; top:618px; width:357px;">Buy now</button>
+      <img class="bag" src="figma/bag-left.png" alt="Swan's Legs left leg" style="left:-4.886px; top:40.7px; width:528.343px; height:704.458px; transform:rotate(4.03deg);">
+    </article>
+
+    <img class="duck-peek" src="figma/duck-peek.png" alt="">
+  </div></div>
+</section>
+
+<!-- ============================== 2. ABOUT ============================== -->
+<section class="page about" id="page-about" data-tab="about" style="--w:6437">
+  <div class="page-inner"><div class="contents">
+    <p class="rec t-title white" style="left:370px; top:72px; width:728px;">What can your Legs do?</p>
+
+    <!-- Card 1 -->
+    <article class="card-b" style="left:370px; width:1000px;">
+      <div class="im t-body" style="left:47px; top:548px; width:904px; height:126px; display:flex; flex-direction:column; justify-content:flex-end;">
+        <p>Swan's Legs is a human-powered moderation system</p>
+        <p>keeps your favorite platforms clean.</p>
+        <p>Show us what you want to see. We'll handle what you don't. Beneath the surface, the legs keep moving.</p>
+      </div>
+      <div class="crop" style="left:-1px; top:-1px; width:1000px; height:525px;">
+        <img src="figma/swan.jpg" alt="A swan on the water" style="left:-252.2px; top:-257.985px; width:1450.4px; height:1029px;">
+        <div style="position:absolute; left:0; top:0; width:1000px; height:201px; background:linear-gradient(to bottom, #fff 56.25%, rgba(255,255,255,0));"></div>
+      </div>
+      <img src="figma/line-h-about.svg" alt="" style="left:-1px; top:523px; width:1000px; height:1px;">
+      <div class="crop" style="left:-1px; top:-1px; width:1000px; height:525px;">
+        <img src="figma/swan-front.png" alt="" style="left:-253px; top:-258.46px; width:1453px; height:1030.84px;">
+      </div>
+      <p class="rcb t-64" style="left:47px; top:31px; width:702px;">Beneath the surface...</p>
+    </article>
+
+    <!-- Card 2 -->
+    <article class="card-b tb" style="left:1458px; width:1596px;">
+      <p class="im t-body" style="left:48px; top:111px; width:702px;">Select the images you prefer. Your choices help us understand what you want to see and what you don't.</p>
+      <p class="im t-body" style="left:846px; top:111px; width:702px;">We'll use your preferences to keep unwanted content out, leaving you with a cleaner, more comfortable feed.</p>
+      <div class="polaroid" style="left:220.83px; top:279.79px; transform:rotate(-12.17deg);">
+        <div class="ph"><img src="figma/photo-kitchen.jpg" alt="" style="left:-2.72px; top:-16.98px; width:185.918px; height:278.741px;"></div>
+      </div>
+      <div class="polaroid" style="left:360.22px; top:354.47px; transform:rotate(11.9deg);">
+        <div class="ph"><img src="figma/photo-cafe.jpg" alt="" style="left:-5.24px; top:-2.64px; width:185.773px; height:286.925px;"></div>
+      </div>
+      <img class="vline" src="figma/line-v-about1.svg" alt="" style="left:799px; top:23px; width:667px;">
+      <p class="rcb t-64" style="left:48px; top:31px; width:702px;"><span class="blue">Step 1.</span> Select images</p>
+      <p class="rcb t-64" style="left:846px; top:31px; width:702px;"><span class="blue">Step 2.</span> Enjoy the clean view</p>
+      <div class="crop" style="left:967px; top:230px; width:463px; height:495px;">
+        <img src="figma/iphone.png" alt="A phone showing a clean feed" style="left:-572.17px; top:0; width:1168.6px; height:495px;">
+      </div>
+      <img src="figma/emoji-sponge.png" alt="" style="left:917px; top:506px; width:166px; height:166px;">
+      <img src="figma/emoji-sparkles.png" alt="" style="left:1290px; top:321px; width:200px; height:200px;">
+      <img src="figma/bubble-like.png" alt="Like" style="left:517px; top:307.2px; width:170px; height:93px;">
+      <img src="figma/bubble-dislike-shot.png" alt="Dislike" style="left:76px; top:490.2px; width:207px; height:93px;">
+      <img src="figma/cursor.png" alt="" style="left:546.24px; top:484.04px; width:123px; height:185px; transform:rotate(114.71deg) scaleY(-1);">
+    </article>
+
+    <!-- Card 3 -->
+    <article class="card-b" style="left:3142px; width:2076px;">
+      <div class="leg-text" style="left:529px; top:115px; width:428px;">
+        <p class="rcb t1">Left Leg</p>
+        <p class="im t-body t2">Keeps your Instagram feed clean by reviewing and filtering unwanted content before it reaches you.</p>
+      </div>
+      <div class="leg-text" style="left:1516px; top:407px; width:448px;">
+        <p class="rcb t1">Right Leg</p>
+        <p class="im t-body t2">Keeps your YouTube experience safe by reviewing and filtering unwanted videos before you watch them.</p>
+      </div>
+      <img class="bag" src="figma/bag-left.png" alt="Left Leg" style="left:-170px; top:-97.625px; width:708.344px; height:944.458px; transform:rotate(4.03deg);">
+      <div class="crop" style="left:1013px; top:23px; width:440px; height:667px;">
+        <img class="bag" src="figma/bag-right.png" alt="Right Leg" style="left:-191.896px; top:-138.332px; width:708.344px; height:944.458px; transform:rotate(-4.65deg);">
+      </div>
+      <img class="vline" src="figma/line-v-about2.svg" alt="" style="left:1014px; top:23px; width:667px;">
+      <img class="icon-shadow" src="figma/youtube.png" alt="YouTube" style="left:1325.892px; top:36.341px; width:217.996px; height:152.768px; transform:rotate(-7.36deg);">
+      <img class="icon-shadow" src="figma/instagram.png" alt="Instagram" style="left:322.57px; top:387px; width:197px; height:197px; transform:rotate(5.88deg);">
+    </article>
+
+    <p class="im white" style="left:5456px; top:444px; width:736px; font-size:24px; line-height:35px; text-align:center; white-space:pre-wrap;">You enjoy what's above the surface.
+ We'll take care of what's underneath.</p>
+  </div></div>
+</section>
+
+<!-- ============================== 3. STORE ============================== -->
+<section class="page" id="page-store" data-tab="store" style="--w:2923">
+  <div class="page-inner"><div class="contents">
+    <!-- Left Leg -->
+    <article class="card-a st-card" style="left:370px;">
+      <img src="figma/bullet-points.svg" alt="" style="left:521.55px; top:185.4px; width:76.11px; height:490.849px;">
+      <div class="bullet-text" style="left:610.34px; top:567px;"><b>Zero visible human labor</b><span>모든 과정은 화면 밖에서 처리됩니다.</span></div>
+      <div class="bullet-text" style="left:635.34px; top:392px;"><b>Fewer disturbing posts</b><span>불쾌한 게시물 노출을 줄입니다.</span></div>
+      <div class="bullet-text" style="left:628.34px; top:480px;"><b>Seamless scrolling</b><span>끊김 없는 탐색을 제공합니다.</span></div>
+      <div class="bullet-text" style="left:628.34px; top:305px;"><b>Safer images</b><span>유해 이미지를 미리 검토합니다.</span></div>
+      <div class="bullet-text" style="left:610.34px; top:223px;"><b>Cleaner feeds</b><span>불필요한 콘텐츠를 걸러냅니다.</span></div>
+      <div class="st-title">
+        <img class="lines" src="figma/card-title-lines.svg" alt="">
+        <div class="fade"></div>
+        <div class="row" style="top:16px;"><i class="tri"><img src="figma/triangle.svg" alt=""></i><span class="rcb">Content Review</span></div>
+        <div class="row" style="top:64px;"><i class="tri"><img src="figma/triangle.svg" alt=""></i><span class="rcb">Image Filtering</span></div>
+        <div class="row" style="top:112px;"><i class="tri"><img src="figma/triangle.svg" alt=""></i><span class="rcb">Feed Moderation</span></div>
+        <p class="rec grey" style="left:48px; top:120px; width:364px; height:48px; font-size:40px; line-height:40px;">For Instagram</p>
+        <p class="rcb" style="left:48px; top:25px; width:458px; font-size:88px; line-height:96px;">Left Leg</p>
+      </div>
+      <button class="btn sky01 buy" data-leg="left" style="left:706px; top:746px; width:313px;">Buy now</button>
+      <p class="old-price" style="left:50px; top:706px;">$20.00</p>
+      <p class="price" style="left:47px; top:746px; width:149px;">$0.00</p>
+      <img src="figma/line-h-store.svg" alt="" style="left:50px; top:688.5px; width:968px; height:1px;">
+      <img class="bag" src="figma/bag-left.png" alt="Swan's Legs left leg" style="left:55.761px; top:110.4px; width:450.945px; height:601.26px; transform:rotate(4.03deg);">
+    </article>
+
+    <!-- Right Leg -->
+    <article class="card-a st-card" style="left:1478px;">
+      <img src="figma/bullet-points.svg" alt="" style="left:521.55px; top:185.4px; width:76.11px; height:490.849px;">
+      <div class="bullet-text" style="left:610.34px; top:567px;"><b>Zero visible human labor</b><span>모든 과정은 화면 밖에서 처리됩니다.</span></div>
+      <div class="bullet-text" style="left:635.34px; top:392px;"><b>Fewer disturbing scenes</b><span>불쾌한 장면 노출을 줄입니다.</span></div>
+      <div class="bullet-text" style="left:628.34px; top:480px;"><b>Seamless watching</b><span>끊김 없는 시청을 제공합니다.</span></div>
+      <div class="bullet-text" style="left:628.34px; top:305px;"><b>Safer videos</b><span>유해 영상을 미리 검토합니다.</span></div>
+      <div class="bullet-text" style="left:610.34px; top:223px;"><b>Cleaner recommendations</b><span>원하지 않는 추천을 걸러냅니다.</span></div>
+      <div class="st-title">
+        <img class="lines" src="figma/card-title-lines.svg" alt="">
+        <div class="fade"></div>
+        <div class="row" style="top:16px;"><i class="tri"><img src="figma/triangle.svg" alt=""></i><span class="rcb">Content Review</span></div>
+        <div class="row" style="top:64px;"><i class="tri"><img src="figma/triangle.svg" alt=""></i><span class="rcb">Video Filtering</span></div>
+        <div class="row" style="top:112px;"><i class="tri"><img src="figma/triangle.svg" alt=""></i><span class="rcb">Video Curation</span></div>
+        <p class="rec grey" style="left:48px; top:120px; width:364px; height:48px; font-size:40px; line-height:40px;">ForYoutube</p>
+        <p class="rcb" style="left:48px; top:25px; width:458px; font-size:88px; line-height:96px;">Right Leg</p>
+      </div>
+      <button class="btn sky01 buy" data-leg="right" style="left:706px; top:746px; width:313px;">Buy now</button>
+      <p class="old-price" style="left:50px; top:706px;">$20.00</p>
+      <p class="price" style="left:47px; top:746px; width:149px;">$0.00</p>
+      <img src="figma/line-h-store.svg" alt="" style="left:50px; top:688.5px; width:968px; height:1px;">
+      <img class="bag" src="figma/bag-right.png" alt="Swan's Legs right leg" style="left:64.761px; top:110.353px; width:450.945px; height:601.26px; transform:rotate(-4.65deg);">
+    </article>
+  </div></div>
+</section>
+
+<!-- ======================= 3-2. STORE – PURCHASE DONE ======================= -->
+<section class="page" id="page-purchased" data-tab="store" style="--w:1920">
+  <div class="page-inner"><div class="contents">
+    <p class="rec t-title blue" style="left:370px; top:72px; width:1180px;">Your purchase is already done!</p>
+    <p class="rc t-sub grey" style="left:370px; top:164px; width:1180px;">Thanks. You can go to the ‘my page’ and use anytime you want :)</p>
+    <a class="link u" href="#mypage" style="left:1418px; top:855px;">Go to My page &gt;</a>
+    <img src="figma/duck-thumbs.png" alt="" style="left:435.008px; top:256.668px; width:1119.432px; height:1486.143px; object-fit:cover; transform:rotate(5.79deg); pointer-events:none;">
+  </div></div>
+</section>
+
+<!-- ============================== 4. MY PAGE ============================== -->
+<section class="page" id="page-mypage" data-tab="mypage" style="--w:1920">
+  <div class="page-inner"><div class="contents">
+    <!-- Empty -->
+    <div id="mp-empty" style="inset:0;">
+      <img class="abs" src="figma/character-sad.png" alt="" style="left:40.519px; top:220.519px; width:1841.649px; height:1841.649px; transform:rotate(-4.71deg); pointer-events:none;">
+      <p class="rec t-title blue abs" style="left:370px; top:72px; width:1180px;">Your purchase is nowhere..;(</p>
+      <p class="rc t-sub grey abs" style="left:370px; top:164px; width:1180px;">Go to store and enjoy your legs</p>
+      <a class="link u abs" href="#store" style="left:1418px; top:855px;">Go to Store &gt;</a>
+    </div>
+    <!-- Purchase list -->
+    <div id="mp-list" style="inset:0;" hidden>
+      <p class="rec t-title blue abs" style="left:370px; top:72px; width:1845px;">Purchase</p>
+      <div class="mp-card abs">
+        <div class="mp-row" data-leg="left">
+          <p class="rcb t-64" style="left:344.03px; top:24px; width:421px;">Left Leg</p>
+          <p class="rec grey" style="left:345.03px; top:96px; width:420px; height:48px; font-size:32px; line-height:32px;">For Instagram</p>
+          <button class="btn sky01 use" data-leg="left" style="left:835.03px; top:268px; width:313px;">Use</button>
+          <img class="vline" src="figma/line-v-mypage2.svg" alt="" style="left:305.03px; top:24px; width:316px;">
+          <p class="im t-body" style="left:345.03px; top:284px; width:436px;">Your powerful kit for<br>instagram algorithm</p>
+          <img class="bag" src="figma/bag-left.png" alt="Swan's Legs left leg" style="left:19.378px; top:-14.427px; width:285.682px; height:380.909px; transform:rotate(4.03deg);">
+        </div>
+        <img id="mp-divider" src="figma/line-h-mypage.svg" alt="" style="position:absolute; left:0; top:363.5px; width:1180px; height:1px;">
+        <div class="mp-row" data-leg="right">
+          <p class="rcb t-64" style="left:344.03px; top:26.5px; width:421px;">Right Leg</p>
+          <p class="rec grey" style="left:345.03px; top:98.5px; width:420px; height:48px; font-size:32px; line-height:32px;">For Youtube</p>
+          <button class="btn sky01 use" data-leg="right" style="left:835.03px; top:268.5px; width:313px;">Use</button>
+          <img class="vline" src="figma/line-v-mypage1.svg" alt="" style="left:305.03px; top:23.5px; width:317px;">
+          <p class="im t-body" style="left:345.03px; top:284.5px; width:436px;">Your powerful kit for<br>youtube algorithm</p>
+          <img class="bag" src="figma/bag-right.png" alt="Swan's Legs right leg" style="left:19.965px; top:-21.551px; width:285.682px; height:380.91px; transform:rotate(-4.65deg);">
+        </div>
+      </div>
+    </div>
+  </div></div>
+</section>
+
+<!-- ============================== 5. SUPPORT ============================== -->
+<section class="page" id="page-support" data-tab="support" style="--w:3240">
+  <div class="page-inner"><div class="contents">
+    <p class="rec t-title blue nowrap" style="left:370px; top:72px; width:1476px;">Frequently Asked Questions</p>
+
+    <article class="card-b tb faq" style="left:370px;">
+      <p class="im t-body a" style="top:682px;">It keeps unwanted content away from your feed.</p>
+      <p class="rec q">Q1.</p>
+      <p class="rcb qt">What does Swan’s<br>Legs do?</p>
+    </article>
+    <article class="card-b tb faq" style="left:878px;">
+      <p class="im t-body a" style="top:682px;">Swan's Legs is powered by human moderation.</p>
+      <p class="rec q">Q2.</p>
+      <p class="rcb qt">Who operates the legs?</p>
+    </article>
+    <article class="card-b tb faq" style="left:1386px;">
+      <p class="im t-body a" style="top:682px; width:388px;">Content is reviewed, classified, and removed according to your preferences.</p>
+      <p class="rec q">Q3.</p>
+      <p class="rcb qt">What happens to the content being reviewed?</p>
+    </article>
+    <article class="card-b tb faq" style="left:1894px;">
+      <p class="im t-body a" style="top:682px; width:388px;">Maybe you can :)</p>
+      <p class="rec q">Q4.</p>
+      <p class="rcb qt">Can I stop my leg?</p>
+    </article>
+    <article class="card-b tb faq" style="left:2402px;">
+      <p class="im t-body a" style="top:584px; width:388px;">If you have any questions or need assistance,<br>please contact us by email.</p>
+      <button class="im-b t-body a blue u copy-mail" type="button" data-mail="swans.legs@gmail.com" title="Click to copy" style="top:682px; width:388px;">swans.legs@gmail.com</button>
+    </article>
+  </div></div>
+</section>
+
+</main>
+
+<!-- Shown instantly when "Use" is clicked, then leg.html takes over -->
+<div class="loading-screen" id="loading" hidden>
+  <div class="loading-box">
+    <svg class="ld-art" viewBox="0 0 580 150" width="580" height="150" aria-hidden="true">
+      <defs>
+        <!-- the wave cuts the swan's bottom away (a mask, not a blue shape on top → no edge lines) -->
+        <mask id="ld-water" maskUnits="userSpaceOnUse" x="0" y="0" width="580" height="150">
+          <rect width="580" height="150" fill="#fff"/>
+          <g transform="translate(29 96)">
+            <g>
+              <path fill="#000" d="M651.86,1c-5.19.77-9.13,1.91-12.99,3.02-6.79,1.96-13.82,3.98-27.64,3.98s-20.86-2.02-27.65-3.98c-3.86-1.11-7.79-2.25-12.98-3.02-4.03-.61-8.83-1-14.94-1s-10.91.39-14.94,1c-5.19.77-9.12,1.91-12.98,3.02-6.8,1.96-13.83,3.98-27.65,3.98s-20.85-2.02-27.64-3.98c-3.86-1.11-7.79-2.25-12.99-3.02-4.03-.61-8.82-1-14.93-1s-10.9.39-14.93,1c-5.2.77-9.13,1.91-12.99,3.02-6.8,1.96-13.82,3.98-27.64,3.98s-20.85-2.02-27.65-3.98c-3.86-1.11-7.79-2.25-12.98-3.02C344.31.39,339.52,0,333.4,0c-6.12,0-10.91.39-14.94,1c-5.19.77-9.13,1.91-12.99,3.02-6.79,1.96-13.82,3.98-27.64,3.98s-20.86-2.02-27.65-3.98c-3.86-1.11-7.79-2.25-12.98-3.02-4.03-.61-8.83-1-14.94-1s-10.91.39-14.94,1c-5.19.77-9.12,1.91-12.98,3.02-6.8,1.96-13.83,3.98-27.65,3.98s-20.85-2.02-27.64-3.98c-3.86-1.11-7.79-2.25-12.99-3.02-4.03-.61-8.82-1-14.93-1s-10.9.39-14.93,1c-5.2.77-9.13,1.91-12.99,3.02-6.8,1.96-13.82,3.98-27.64,3.98s-20.85-2.02-27.65-3.98c-3.86-1.11-7.79-2.25-12.98-3.02C10.91.39,6.12,0,0,0v53.47h666.8V0c-6.12,0-10.91.39-14.94,1Z"/>
+              <animateTransform attributeName="transform" type="translate" from="0 0" to="-333.4 0" dur="3.6s" repeatCount="indefinite"/>
+            </g>
+          </g>
+        </mask>
+      </defs>
+      <g mask="url(#ld-water)">
+        <g transform="translate(196 0)"><path class="ld-swan-body" fill="#fff" d="M139.82 22.5375C139.82 22.5375 137.227 19.6569 134.032 18.7825C134.032 18.7825 131.439 19.6569 127.385 17.9251C127.385 17.9251 123.624 19.3654 129.996 34.9515C134.908 47.0569 139.528 58.6478 140.112 71.0446C140.455 78.1947 139.957 85.6362 137.192 92.289C134.891 97.793 130.597 104 123.95 104H25.35C21.812 104 18.5316 102.165 16.6939 99.1476C11.9193 91.3117 9.22286 82.0012 9.20569 71.4047L0 64.2204L9.22286 66.3122V56.4359L19.1155 68.5584L31.447 71.3533L31.7047 71.4047L40.7214 73.4794C41.4771 72.7593 42.2843 72.0391 43.1431 71.3533C44.7575 70.0502 46.5952 68.8499 48.5875 67.7525C57.2436 62.8658 69.0942 59.8481 82.147 59.8481C98.1883 59.8481 112.392 64.3747 121.117 71.3533H121.872C121.872 71.2504 121.89 71.1475 121.89 71.0446V70.7703C122.765 45.6337 111.19 37.8492 112.34 18.2166C113.508 -1.43312 127.385 0.0243208 127.385 0.0243208C133.895 0.0243208 137.776 3.64221 140.267 7.86022C140.696 8.54607 141.074 9.24908 141.4 9.96922C141.52 10.2264 141.658 10.4836 141.795 10.7408C141.847 10.8608 141.881 10.9637 141.932 11.0666C141.898 11.0837 141.881 11.0837 141.864 11.0837C139.992 11.3066 138.154 11.0494 136.351 10.4493C133.792 9.60915 132.194 9.30052 131.25 9.23193C130.803 9.19764 130.597 9.76347 130.958 10.0207C132.194 10.9123 134.032 11.5295 135.028 15.1474C135.32 16.2448 136.694 16.5706 137.433 15.7304C138.566 14.393 141.039 13.7071 143.118 14.3073C143.152 14.4273 143.186 14.5302 143.221 14.633C144.062 17.5308 143.805 18.731 146.484 22.5375C149.953 27.4585 147.36 29.1732 139.82 22.5375Z"/></g>
+      </g>
+    </svg>
+    <p>Loading<span>.</span><span>.</span><span>.</span></p>
+  </div>
+</div>
+
+<script src="main.js"></script>
+</body>
+</html>

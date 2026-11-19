@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Swan's Legs — Leg</title>
+  <link rel="stylesheet" href="https://use.typekit.net/mph8cqw.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ===================== Loading (shown first, until everything has loaded) ===================== -->
+<div class="loading-screen" id="loading">
+  <div class="loading-box">
+    <svg class="ld-art" viewBox="0 0 580 150" width="580" height="150" aria-hidden="true">
+      <defs>
+        <!-- the wave cuts the swan's bottom away (a mask, not a blue shape on top → no edge lines) -->
+        <mask id="ld-water" maskUnits="userSpaceOnUse" x="0" y="0" width="580" height="150">
+          <rect width="580" height="150" fill="#fff"/>
+          <g transform="translate(29 96)">
+            <g>
+              <path fill="#000" d="M651.86,1c-5.19.77-9.13,1.91-12.99,3.02-6.79,1.96-13.82,3.98-27.64,3.98s-20.86-2.02-27.65-3.98c-3.86-1.11-7.79-2.25-12.98-3.02-4.03-.61-8.83-1-14.94-1s-10.91.39-14.94,1c-5.19.77-9.12,1.91-12.98,3.02-6.8,1.96-13.83,3.98-27.65,3.98s-20.85-2.02-27.64-3.98c-3.86-1.11-7.79-2.25-12.99-3.02-4.03-.61-8.82-1-14.93-1s-10.9.39-14.93,1c-5.2.77-9.13,1.91-12.99,3.02-6.8,1.96-13.82,3.98-27.64,3.98s-20.85-2.02-27.65-3.98c-3.86-1.11-7.79-2.25-12.98-3.02C344.31.39,339.52,0,333.4,0c-6.12,0-10.91.39-14.94,1c-5.19.77-9.13,1.91-12.99,3.02-6.79,1.96-13.82,3.98-27.64,3.98s-20.86-2.02-27.65-3.98c-3.86-1.11-7.79-2.25-12.98-3.02-4.03-.61-8.83-1-14.94-1s-10.91.39-14.94,1c-5.19.77-9.12,1.91-12.98,3.02-6.8,1.96-13.83,3.98-27.65,3.98s-20.85-2.02-27.64-3.98c-3.86-1.11-7.79-2.25-12.99-3.02-4.03-.61-8.82-1-14.93-1s-10.9.39-14.93,1c-5.2.77-9.13,1.91-12.99,3.02-6.8,1.96-13.82,3.98-27.64,3.98s-20.85-2.02-27.65-3.98c-3.86-1.11-7.79-2.25-12.98-3.02C10.91.39,6.12,0,0,0v53.47h666.8V0c-6.12,0-10.91.39-14.94,1Z"/>
+              <animateTransform attributeName="transform" type="translate" from="0 0" to="-333.4 0" dur="3.6s" repeatCount="indefinite"/>
+            </g>
+          </g>
+        </mask>
+      </defs>
+      <g mask="url(#ld-water)">
+        <g transform="translate(196 0)"><path class="ld-swan-body" fill="#fff" d="M139.82 22.5375C139.82 22.5375 137.227 19.6569 134.032 18.7825C134.032 18.7825 131.439 19.6569 127.385 17.9251C127.385 17.9251 123.624 19.3654 129.996 34.9515C134.908 47.0569 139.528 58.6478 140.112 71.0446C140.455 78.1947 139.957 85.6362 137.192 92.289C134.891 97.793 130.597 104 123.95 104H25.35C21.812 104 18.5316 102.165 16.6939 99.1476C11.9193 91.3117 9.22286 82.0012 9.20569 71.4047L0 64.2204L9.22286 66.3122V56.4359L19.1155 68.5584L31.447 71.3533L31.7047 71.4047L40.7214 73.4794C41.4771 72.7593 42.2843 72.0391 43.1431 71.3533C44.7575 70.0502 46.5952 68.8499 48.5875 67.7525C57.2436 62.8658 69.0942 59.8481 82.147 59.8481C98.1883 59.8481 112.392 64.3747 121.117 71.3533H121.872C121.872 71.2504 121.89 71.1475 121.89 71.0446V70.7703C122.765 45.6337 111.19 37.8492 112.34 18.2166C113.508 -1.43312 127.385 0.0243208 127.385 0.0243208C133.895 0.0243208 137.776 3.64221 140.267 7.86022C140.696 8.54607 141.074 9.24908 141.4 9.96922C141.52 10.2264 141.658 10.4836 141.795 10.7408C141.847 10.8608 141.881 10.9637 141.932 11.0666C141.898 11.0837 141.881 11.0837 141.864 11.0837C139.992 11.3066 138.154 11.0494 136.351 10.4493C133.792 9.60915 132.194 9.30052 131.25 9.23193C130.803 9.19764 130.597 9.76347 130.958 10.0207C132.194 10.9123 134.032 11.5295 135.028 15.1474C135.32 16.2448 136.694 16.5706 137.433 15.7304C138.566 14.393 141.039 13.7071 143.118 14.3073C143.152 14.4273 143.186 14.5302 143.221 14.633C144.062 17.5308 143.805 18.731 146.484 22.5375C149.953 27.4585 147.36 29.1732 139.82 22.5375Z"/></g>
+      </g>
+    </svg>
+    <p>Loading<span>.</span><span>.</span><span>.</span></p>
+  </div>
+</div>
+
+<!-- speaker icons (same shapes as the Overview video), reused below -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <g id="i-sound"><path stroke="none" d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></g>
+    <g id="i-sound1"><path stroke="none" d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></g>
+    <g id="i-muted"><path stroke="none" d="M3 9v6h4l5 5V4L7 9H3z"/><path d="M14.6 9l6 6M20.6 9l-6 6" fill="none" stroke-width="1.8" stroke-linecap="butt" stroke-linejoin="miter"/></g>
+  </defs>
+</svg>
+
+<div class="stage-wrap">
+  <div class="stage" id="stage">
+
+    <!-- ===================== Leg page (Default / Select / Hover) ===================== -->
+    <div class="leg-header">
+      <div class="menubar">
+        <img class="mb-lines" src="figma/header-lines.svg" alt="">
+        <img class="mb-grad" src="figma/header-gradient.png" alt="">
+        <button class="sound-btn gray02b" id="sound" type="button" aria-label="Volume" aria-expanded="false" aria-controls="vol-panel">
+          <svg class="ic-sound" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-sound"/></svg>
+          <svg class="ic-sound1" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-sound1"/></svg>
+          <svg class="ic-muted" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-muted"/></svg>
+        </button>
+        <button class="close-btn gray02b" id="close" type="button" aria-label="Leave"><img src="figma/icon-close.svg" alt=""></button>
+      </div>
+      <div class="menubar-under"></div>
+    </div>
+
+    <div class="contents">
+      <div class="frame">
+        <!-- Original image (large) -->
+        <div class="shot" id="original" style="left:72px; top:72px; width:968px; height:545px;">
+          <p style="left:482.5px; top:260px;">Original Image</p>
+        </div>
+        <p class="rc t-sub grey" style="left:1120px; top:164px; width:580px;">Don’t worry. It is just selecting images :)</p>
+        <p class="rec t-title blue nowrap" style="left:1120px; top:72px; width:580px;">Select your preferences</p>
+
+        <div class="choices" id="choices">
+          <button class="btn gray01" data-v="Perfect">Perfect</button>
+          <button class="btn gray01" data-v="Good">Good</button>
+          <button class="btn gray01" data-v="Okay">Okay</button>
+          <button class="btn gray01" data-v="Bad">Bad</button>
+          <button class="btn gray01" data-v="Disgusting">Disgusting</button>
+        </div>
+
+        <!-- CCTV image (small) + detection overlay -->
+        <div class="shot" id="cctv" style="left:72px; top:652px; width:477px; height:267px;">
+          <p style="left:237px; top:121px;">CCTV Image</p>
+        </div>
+
+        <div class="meta">
+          <div class="row title"><span class="hc"><span>Name </span><span>:</span></span><p id="m-name"></p></div>
+          <div class="row"><span class="hc"><span>Code </span><span>:</span></span><p id="m-code"></p></div>
+          <div class="sub">
+            <div class="row"><span class="hc"><span>[CON]</span><span>:</span></span><p id="m-con"></p></div>
+            <div class="row"><span class="hc"><span>[OBJ]</span><span>:</span></span><p id="m-obj"></p></div>
+            <div class="row"><span class="hc"><span>[VIS]</span><span>:</span></span><p id="m-vis"></p></div>
+            <div class="row"><span class="hc"><span>[QUA]</span><span>:</span></span><p id="m-qua"></p></div>
+          </div>
+        </div>
+
+        <button class="pager u" id="prev" style="left:1117px; top:895px;">&lt; Prev</button>
+        <button class="pager u" id="next" style="left:1848px; top:895px; transform:translateX(-100%);" disabled>Next &gt;</button>
+        <p class="pager grey" id="count" style="left:1482.5px; top:895px; transform:translateX(-50%);">01/12</p>
+        <button class="help-btn" id="help" aria-label="How it works"><img src="figma/icon-help.svg" alt=""></button>
+      </div>
+    </div>
+
+    <div class="timer" id="timer" style="left:auto; right:144px; top:0;">00:00:00</div>
+    <div class="leg-thumb">
+      <span class="ic"><img src="figma/icon-swan.svg" alt=""></span>
+      <span id="leg-name">Right Leg</span>
+    </div>
+
+    <!-- Pop-up ads (image 10, once per flow) – built by leg.js -->
+    <div class="ads" id="ads"></div>
+
+    <!-- Volume panel (opens from the sound button) -->
+    <div class="vol-panel" id="vol-panel" hidden>
+      <div class="vol-track"></div>
+      <div class="vol-hit" id="vol-hit"></div>
+      <div class="vol-knob" id="vol-knob" role="slider" tabindex="0" aria-label="Music volume" aria-valuemin="0" aria-valuemax="100" aria-valuenow="100"></div>
+      <button class="vol-mute" id="vol-mute" type="button" aria-label="Mute music" aria-pressed="false">
+        <svg class="ic-sound" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-sound"/></svg>
+        <svg class="ic-sound1" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-sound1"/></svg>
+        <svg class="ic-muted" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-muted"/></svg>
+      </button>
+    </div>
+
+    <!-- ===================== Scrim + modals ===================== -->
+    <div class="scrim" id="scrim" hidden></div>
+
+    <!-- Landing (Info) -->
+    <div class="modal light" id="info" hidden>
+      <p class="rec t-title blue" style="left:48px; top:48px; width:1272px;">Just select image, that all.</p>
+      <button class="btn sky01" id="got-it" style="left:378px; top:741px; width:612px;">Got it!</button>
+      <p class="rc t-sub grey" style="left:48px; top:136px; width:1272px;">Then Swan’s leg will clean your algorithm without seeing human labor.</p>
+      <div class="info-text">
+        <p>이미지에 대한 당신의 선호도를 5단계 중에<br>선택하세요. 선택만 하면 별도의 노력 없이 당신의<br>알고리즘을 청소해줍니다. 정말 대단하죠?</p>
+        <div class="info-caption">
+          <div><span>*</span><p>이 사이트에는 상해, 폭력, 선정적 표현 등 불쾌감을 유발할 수 있는 이미지 및 콘텐츠가 포함되어 있습니다.</p></div>
+          <div><span>*</span><p>이 사이트에서 제공하는 프로그램은 안내된 내용과 실제로 다를 수 있습니다.</p></div>
+          <div><span>*</span><p>아래 버튼을 누를 경우, 위 내용을 충분히 숙지하고 이에 동의한 것으로 간주됩니다.</p></div>
+        </div>
+      </div>
+      <div style="left:48px; top:202px; width:687px; height:507px; overflow:hidden;">
+        <img class="abs" src="figma/emoji-angry.png" alt="" style="left:20px; top:296.77px; width:169px; height:169px;">
+        <div class="abs" style="left:150.613px; top:53.046px; width:357.635px; height:532.245px; background:#f2f2f2; border-radius:9.124px; overflow:hidden; box-shadow:4.562px 13.685px 6.843px rgba(0,0,0,.4); transform:rotate(-3.27deg);">
+          <div class="abs" style="left:28.528px; top:27.37px; width:301.08px; height:410.563px; background:#d4d4d4; overflow:hidden;">
+            <img class="abs" src="figma/photo-cafe.jpg" alt="" style="left:-8.79px; top:-4.44px; width:311.937px; height:481.784px; object-fit:cover;">
+          </div>
+        </div>
+        <img class="abs" src="figma/emoji-heart.png" alt="" style="left:399.93px; top:22.6px; width:169px; height:169px;">
+        <p class="pill abs" style="left:87.32px; top:427.2px; width:288.212px;">No it’s too bad..:(</p>
+        <p class="pill abs" style="left:484.93px; top:117.95px; width:128.328px;">Good!!!</p>
+        <img class="abs" src="figma/cursor.png" alt="" style="left:486.458px; top:317.95px; width:112.322px; height:169.176px; transform:rotate(105.25deg) scaleY(-1);">
+      </div>
+      <img src="figma/line-h-info.svg" alt="" style="left:0; top:203.5px; width:1368px; height:1px;">
+      <img src="figma/line-h-info.svg" alt="" style="left:8px; top:708.5px; width:1368px; height:1px;">
+    </div>
+
+    <!-- Leave alert (Figma 446:188) -->
+    <div class="modal light" id="leave" hidden>
+      <p class="rec t-title blue" style="left:48px; top:48px; width:1272px;">Are You Sure You Want to Leave?</p>
+      <p class="rc t-sub grey" style="left:48px; top:136px; width:1272px;">Your algorithm still needs you!</p>
+      <div class="info-text"><p>정말 나가시겠어요? 나가시면 현재까지의 진행상황이<br>저장되지 않습니다.</p></div>
+      <div style="left:48px; top:202px; width:687px; height:507px; overflow:hidden;">
+        <img class="abs" src="figma/emoji-sweat.png" alt="" style="left:444.5px; top:8.5px; width:194px; height:194px;">
+        <p class="pill abs" style="left:480px; top:106px;">Really?</p>
+        <img class="abs" src="figma/character-sad2.png" alt="" style="left:-178.084px; top:2.916px; width:1024px; height:1024px; transform:rotate(-2.16deg);">
+        <p class="pill abs" style="left:388px; top:356px;">Wait.. No way!!!</p>
+        <img class="abs" src="figma/emoji-pleading.png" alt="" style="left:20.04px; top:253.04px; width:181px; height:181px;">
+        <p class="pill abs" style="left:93px; top:442px;">Don’t go...</p>
+      </div>
+      <img src="figma/line-h-info.svg" alt="" style="left:0; top:203.5px; width:1368px; height:1px;">
+      <img src="figma/line-h-info.svg" alt="" style="left:8px; top:708.5px; width:1368px; height:1px;">
+      <button class="btn sky01" id="keep-going" style="left:64px; top:741px; width:612px;">Keep going!</button>
+      <a class="btn gray01" href="index.html#mypage" style="left:692px; top:741px; width:612px; text-decoration:none;">Leave anyway</a>
+    </div>
+
+    <!-- Complete (Figma 434:1358) -->
+    <div class="modal dark" id="complete" hidden>
+      <div style="left:39px; top:82px; width:649px; height:37px; background:#f20000;"></div>
+      <p class="rec t-title white" style="left:48px; top:48px; width:1272px;">Could you do this all day?</p>
+      <button class="btn sky01" id="share" style="left:64px; top:741px; width:612px;">Share the hidden work</button>
+      <button class="btn gray01" id="keep-scrolling" style="left:692px; top:741px; width:612px;">Keep scrolling</button>
+      <p class="t-sub" style="left:48px; top:136px; width:1272px; font-family:var(--f-rc); font-weight:700; color:#bababa;">Your shift is over. Theirs isn't.</p>
+      <img src="figma/line-h-complete.svg" alt="" style="left:0; top:219.5px; width:1368px; height:1px;">
+      <img src="figma/line-h-complete.svg" alt="" style="left:8px; top:708.5px; width:1368px; height:1px;">
+      <img class="vline" src="figma/line-v-complete.svg" alt="" style="left:684.5px; top:220px; width:489px;">
+      <div class="white" style="left:48px; top:252px; width:604px; height:457px; display:flex; flex-direction:column; gap:20px;">
+        <p class="rec" style="font-size:48px; line-height:48px;">What you just did?<br>&#8203;</p>
+        <p class="kr" style="font-size:24px; line-height:34px;">당신은 방금 <span id="done-count">12</span>개의 이미지를 검토하고, 유해 가능성이 있는<br>콘텐츠를 직접 분류했습니다.</p>
+      </div>
+      <div class="white" style="left:684px; top:252px; width:639px; height:457px; padding-left:32px; display:flex; flex-direction:column; gap:20px;">
+        <p class="rec" style="font-size:48px; line-height:48px;">Do yo know about<br>‘Contents moderators’?</p>
+        <p class="kr" style="font-size:24px; line-height:34px;">콘텐츠 모더레이터는 매일 수많은 이미지를 검토하며 인터넷을<br>안전하게 유지합니다. 그 과정에서 정신적·신체적 부담을 감당<br>하지만, 제대로 된 조치를 받지 못하고 있습니다.</p>
+      </div>
+    </div>
+
+    <!-- Share (Figma 453:450) -->
+    <div class="modal blue01" id="share-card" hidden>
+      <img src="figma/sky.jpg" alt="" style="left:0; top:-27px; width:1372px; height:914px; object-fit:cover; opacity:.9;">
+      <div class="blue01" style="left:0; top:0; width:1368px; height:861px; mix-blend-mode:overlay; opacity:.5;"></div>
+      <div class="blue01" style="left:0; top:0; width:1368px; height:861px; opacity:.59;"></div>
+      <p class="rec t-title white" style="left:48px; top:48px; width:1272px;">Spread to the world</p>
+      <p class="rc t-sub" style="left:48px; top:136px; width:1272px; color:#bababa;">Your link is ready to share</p>
+      <div class="info-text"><p style="color:#fff;">관심을 가져주어 감사합니다!<br>링크가 세상을 향해 나아갈 준비가 되었습니다<br>친구들에게 링크를 공유해보세요 🥳</p></div>
+      <img src="figma/line-h-complete.svg" alt="" style="left:0; top:203.5px; width:1368px; height:1px;">
+      <img src="figma/line-h-complete.svg" alt="" style="left:8px; top:708.5px; width:1368px; height:1px;">
+      <a class="btn sky01" href="https://www.instagram.com/" target="_blank" rel="noopener" style="left:64px; top:741px; width:612px; text-decoration:none;">Go to Instagram</a>
+      <a class="btn sky02k" href="index.html#overview" style="left:692px; top:741px; width:612px; text-decoration:none;">Go back overview</a>
+      <div style="left:48px; top:202px; width:687px; height:507px; overflow:hidden;">
+        <img class="abs" src="figma/emoji-party.png" alt="" style="left:413.1px; top:84.1px; width:177px; height:177px;">
+        <img class="abs" src="figma/emoji-clap.png" alt="" style="left:39.03px; top:6.03px; width:194px; height:194px;">
+        <img class="abs" src="figma/share-vector.svg" alt="" style="left:305.79px; top:98.28px; width:103.396px; height:107.448px;">
+        <img class="abs" src="figma/character-congrats.png" alt="" style="left:-173px; top:3px; width:1024px; height:1024px;">
+        <p class="pill abs" style="left:388px; top:298px;">YOU’RE SO COOL!!</p>
+        <p class="pill abs" style="left:8px; top:392px;">Beautiful</p>
+      </div>
+    </div>
+
+    <!-- Keep scrolling (Figma 453:345) – 5 s, then back to Overview -->
+    <div class="keep-screen" id="keep-screen" hidden><p>Enjoy a clean feed forever</p></div>
+
+  </div>
+</div>
+<!-- Background music: Camille Saint-Saëns – The Swan (Hadasa Atzmon, Artlist Classics) -->
+<audio id="bgm" src="figma/swan-music.mp3" loop preload="auto"></audio>
+<!-- "Keep scrolling" black screen: Airborne Sound – Interference Buzz High Tone Crackle -->
+<audio id="sfx" src="figma/sfx-buzz.mp3" preload="auto"></audio>
+<script src="leg-data.js"></script>
+<script src="leg.js"></script>
+</body>
+</html>
