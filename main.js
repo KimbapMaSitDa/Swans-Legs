@@ -27,9 +27,7 @@
   };
   function boxOf(page) {
     if (page !== 'mypage') return BOXES[page];
-    if (owned.length === 0) return BOXES.purchased;                                  // "Your purchase is nowhere" – same layout
-    const card = document.querySelector('.mp-card');                                 // 1 or 2 rows
-    return { mode: 'fit', x1: 370, x2: 1550, y1: 72, y2: 190 + card.offsetHeight };
+    return BOXES.purchased;   // empty ("Your purchase is nowhere") or list: title at the shared Y like every page
   }
   let current = 'overview';
   function layout() {
@@ -71,6 +69,12 @@
     const rows = [...document.querySelectorAll('.mp-row')];
     rows.forEach((r) => { r.hidden = !owned.includes(r.dataset.leg); });
     document.getElementById('mp-divider').hidden = owned.length < 2;
+    // 2 legs: the card fills the band under the title (top 190 → 919, as in Figma).
+    // 1 leg: centre the card in the content area (the 72–919 band's middle = window middle), rather than
+    // keeping it right under the title.
+    const card = document.querySelector('.mp-card');
+    const BAND_MID = (72 + 919) / 2;
+    card.style.top = owned.length >= 2 ? '190px' : `${BAND_MID - card.offsetHeight / 2}px`;
   }
 
   /* Buy now → "Purchased" (disabled) once that leg is owned – Overview + Store */
