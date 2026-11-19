@@ -218,6 +218,37 @@ p { overflow-wrap: break-word; }
 .mov .ic-sound { display: none; }
 .mov.unmuted .ic-sound { display: block; }
 .mov.unmuted .ic-muted { display: none; }
+/* seek bar: shows on hover, click or drag to jump */
+.mov-seek {
+  position: absolute; left: 32px; right: 32px; bottom: 8px; height: 28px;
+  cursor: pointer; touch-action: none; opacity: 0; transition: opacity .2s ease;
+}
+.mov:hover .mov-seek, .mov-seek:focus-visible, .mov-seek.dragging { opacity: 1; }
+.mov-seek:focus-visible { outline: none; }
+.mov-seek::before, .mov-seek-fill {
+  content: ""; position: absolute; left: 0; top: 50%; height: 6px; margin-top: -3px; border-radius: 3px;
+  transition: height .15s ease, margin-top .15s ease;
+}
+.mov-seek::before { right: 0; background: rgba(255, 255, 255, .35); }
+.mov-seek-fill { width: 0; background: var(--blue-02); }
+/* handle: Figma "Handle" (Visual-Experiment 480:275), 30×30 */
+.mov-seek-fill::after {
+  content: ""; position: absolute; right: -15px; top: 50%; width: 30px; height: 30px; margin-top: -15px;
+  border-radius: 999px;
+  background: radial-gradient(19.756px 27px at 15px 27px, #d5d5d5 0%, #fff 89.423%);
+  box-shadow:
+    0 4px 4px 0 rgba(0, 0, 0, .27),
+    inset 0 3px 4px 0 rgba(0, 0, 0, .25),
+    inset 0 7px 4px 0 rgba(255, 255, 255, .2),
+    inset 0 -2px 4px 0 rgba(255, 255, 255, .2),
+    inset 0 -6px 4px 0 rgba(255, 255, 255, .78),
+    inset -2px -2px 3px 0 rgba(0, 0, 0, .32),
+    inset 2px -2px 2px 0 rgba(0, 0, 0, .32),
+    inset 0 6px 4px 0 rgba(255, 255, 255, .5);
+  transform: scale(0); transition: transform .15s ease;
+}
+.mov-seek:hover::before, .mov-seek:hover .mov-seek-fill, .mov-seek.dragging::before, .mov-seek.dragging .mov-seek-fill { height: 10px; margin-top: -5px; }
+.mov-seek:hover .mov-seek-fill::after, .mov-seek.dragging .mov-seek-fill::after, .mov-seek:focus-visible .mov-seek-fill::after { transform: scale(1); }
 
 /* Support: click-to-copy e-mail with a "two squares" copy cursor */
 .copy-mail {

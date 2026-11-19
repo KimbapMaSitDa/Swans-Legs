@@ -115,6 +115,44 @@
   });
   syncSound();
 
+  /* Overview video: seek bar (click / drag / arrow keys) */
+  const seek = document.getElementById('mov-seek');
+  const seekFill = document.getElementById('mov-seek-fill');
+  const paintSeek = () => {
+    const p = video.duration ? video.currentTime / video.duration : 0;
+    seekFill.style.width = (p * 100) + '%';
+    seek.setAttribute('aria-valuenow', String(Math.round(p * 100)));
+  };
+  let seekRaf = 0;
+  const seekLoop = () => { paintSeek(); seekRaf = requestAnimationFrame(seekLoop); };
+  video.addEventListener('play', () => { cancelAnimationFrame(seekRaf); seekLoop(); });
+  video.addEventListener('pause', () => { cancelAnimationFrame(seekRaf); paintSeek(); });
+  ['loadedmetadata', 'seeked', 'timeupdate'].forEach((ev) => video.addEventListener(ev, paintSeek));
+  const seekTo = (e) => {
+    if (!video.duration) return;
+    const r = seek.getBoundingClientRect();
+    const p = Math.min(1, Math.max(0, (e.clientX - r.left) / r.width));
+    video.currentTime = p * video.duration;
+    paintSeek();
+  };
+  seek.addEventListener('pointerdown', (e) => {
+    seek.setPointerCapture(e.pointerId);
+    seek.classList.add('dragging');
+    seekTo(e);
+  });
+  seek.addEventListener('pointermove', (e) => { if (seek.classList.contains('dragging')) seekTo(e); });
+  const endDrag = () => seek.classList.remove('dragging');
+  seek.addEventListener('pointerup', endDrag);
+  seek.addEventListener('pointercancel', endDrag);
+  seek.addEventListener('keydown', (e) => {
+    if (!video.duration) return;
+    if (e.key === 'ArrowRight') video.currentTime = Math.min(video.duration, video.currentTime + 5);
+    else if (e.key === 'ArrowLeft') video.currentTime = Math.max(0, video.currentTime - 5);
+    else return;
+    e.preventDefault();
+    paintSeek();
+  });
+
   /* Support: click the e-mail to copy it */
   document.querySelectorAll('.copy-mail').forEach((btn) => btn.addEventListener('click', async () => {
     const text = btn.dataset.mail;

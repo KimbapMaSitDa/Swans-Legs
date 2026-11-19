@@ -55,6 +55,10 @@
         <!-- sound on -->
         <svg class="ic-sound" viewBox="0 0 24 24" aria-hidden="true"><path stroke="none" d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg>
       </button>
+      <!-- 재생바: 클릭/드래그로 이동, 좌우 방향키로 5초씩 이동 -->
+      <div class="mov-seek" id="mov-seek" role="slider" tabindex="0" aria-label="Video progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+        <div class="mov-seek-fill" id="mov-seek-fill"></div>
+      </div>
     </div>
 
     <p class="rec t-title blue nowrap" style="left:2073px; top:67px; width:1845px;">Shopping with our Legs S2</p>
