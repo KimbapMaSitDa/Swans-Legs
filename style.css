@@ -206,6 +206,21 @@ p { overflow-wrap: break-word; }
 .vline { transform-origin: 0 0; transform: rotate(90deg); height: 1px; }
 .link { font-family: var(--f-im); font-weight: 700; font-size: 30px; line-height: 32px; color: var(--blue-03); white-space: nowrap; }
 
+/* Character card – purchase done (Figma 483:23) / purchase nowhere (Figma 483:35).
+   Same box as the Overview video card; sky photo at 60%, character clipped by the card, button bottom-right. */
+.char-card {
+  left: 371px; top: 263px; width: 1178px; height: 661px; border-radius: 8px; overflow: hidden;
+}
+.char-card.done    { background: linear-gradient(to top, #a0d7f1 0%, #5ec1ef 40.865%, #22a7e4 100%); }   /* Gradient/Skyblue 02 */
+.char-card.nowhere { background: linear-gradient(to bottom, #0e379d 0%, #4a64a5 100%); }
+.char-card > img { position: absolute; max-width: none; pointer-events: none; }
+.char-card > img.sky { object-fit: cover; opacity: .6; }
+.char-card > img.sky.flip { transform: scaleX(-1); }   /* Figma: rotate 180° + flip vertical = mirrored */
+.char-card .card-btn {
+  position: absolute; top: 561px; transform: translateX(-50%);   /* bottom 28px */
+  padding: 0 48px; white-space: nowrap; font-weight: 700; text-decoration: none;   /* Input Mono Bold 24 */
+}
+
 /* ---------------------------------------------------------- 1. Overview */
 .mov { left: 371px; top: 263px; width: 1178px; height: 661px; border-radius: 8px; overflow: hidden; background: #4f4f4f; }
 .mov video, .mov img { width: 100%; height: 100%; object-fit: cover; display: block; }

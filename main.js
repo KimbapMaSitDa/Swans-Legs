@@ -12,21 +12,22 @@
        under the 94px header). It keeps MARGIN px on the left and right.
        · 'scroll' pages are wider than a screen: they scroll sideways.
        · 'fit' pages: centred on both axes.
-       · 'bottom' pages (character + link): centred horizontally, stuck to the bottom.
      - Scale: grows with the window to keep the 371px margins, but never
        so much that the 1053px-tall design no longer fits the window height.
      ------------------------------------------------------------------ */
-  const HEADER = 94, CONTENT_H = FRAME_H - HEADER, MARGIN = 371, REF_W = 1920;
+  const HEADER = 94, MARGIN = 371, REF_W = 1920;
   const BOXES = {
     overview:  { mode: 'scroll', x1: 371, x2: 4013, y1: 67,  y2: 914 },
     about:     { mode: 'scroll', x1: 370, x2: 6192, y1: 72,  y2: 919 },
     store:     { mode: 'scroll', x1: 370, x2: 2546, y1: 72,  y2: 919 },
     support:   { mode: 'scroll', x1: 370, x2: 2870, y1: 72,  y2: 919 },
-    purchased: { mode: 'bottom', x1: 370, x2: 1732 },
+    // title + character card pages (1920px Figma frame, 1180px column 370–1550, card ends at y=924);
+    // they centre the same 72–919 band as the other pages so the title sits at the same Y everywhere.
+    purchased: { mode: 'fit', x1: 370, x2: 1550, y1: 72, y2: 919 },
   };
   function boxOf(page) {
     if (page !== 'mypage') return BOXES[page];
-    if (owned.length === 0) return { mode: 'bottom', x1: 370, x2: 1732 };          // "Your purchase is nowhere"
+    if (owned.length === 0) return BOXES.purchased;                                  // "Your purchase is nowhere" – same layout
     const card = document.querySelector('.mp-card');                                 // 1 or 2 rows
     return { mode: 'fit', x1: 370, x2: 1550, y1: 72, y2: 190 + card.offsetHeight };
   }
@@ -34,7 +35,8 @@
   function layout() {
     const box = boxOf(current);
     const W = innerWidth, H = innerHeight;
-    const natural = box.x2 - box.x1 + 2 * MARGIN;                    // page width with 371px margins
+    // page width with side margins: 371px for wide scroll pages, the Figma frame's own margin (370px → 1920px) otherwise
+    const natural = box.x2 - box.x1 + 2 * (box.mode === 'scroll' ? MARGIN : box.x1);
     const s = Math.min(H / FRAME_H, W / (box.mode === 'scroll' ? REF_W : natural));
     root.style.setProperty('--s', s.toFixed(4));
     const vw = W / s, vh = H / s;                                    // window size in design px
@@ -42,8 +44,7 @@
     const areaH = vh - HEADER;                                       // height under the header
     const ox = natural > vw ? MARGIN - box.x1                        // wider than the window → scroll, 371 on the left
                             : (pageW - (box.x2 - box.x1)) / 2 - box.x1;   // otherwise centred
-    const oy = box.mode === 'bottom' ? areaH - CONTENT_H             // stick the design's bottom edge to the window bottom
-                                     : (areaH - (box.y2 - box.y1)) / 2 - box.y1;
+    const oy = (areaH - (box.y2 - box.y1)) / 2 - box.y1;           // centred vertically
     const page = document.getElementById('page-' + current), inner = page.querySelector('.page-inner');
     page.style.width = `${pageW * s}px`;
     inner.style.width = `${pageW}px`;
