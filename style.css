@@ -32,7 +32,7 @@
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
 html, body { height: 100%; overflow: hidden; background: #fff; color: #000; }
-body { -webkit-font-smoothing: antialiased; font-family: var(--f-im); font-weight: 500; }
+body { -webkit-font-smoothing: antialiased; font-family: var(--f-im); font-weight: 400; }
 img { display: block; max-width: none; }
 a { color: inherit; }
 button { font: inherit; color: inherit; border: 0; background: none; cursor: pointer; }
@@ -42,9 +42,11 @@ p { overflow-wrap: break-word; }
 .rec  { font-family: var(--f-rec);  font-weight: 500; font-style: normal; }
 .rc   { font-family: var(--f-rc);   font-weight: 500; }   /* Figma: Rocky Condensed Medium (34px grey subtitles) */
 .rcb  { font-family: var(--f-rec);  font-weight: 500; }   /* Figma: Rocky Extra Condensed Medium */
-.im   { font-family: var(--f-im);   font-weight: 500; }   /* Input Mono: 400 → 500 (Medium) */
-.im-m { font-family: var(--f-im);   font-weight: 500; }
-.im-b { font-family: var(--f-im);   font-weight: 700; }
+/* Input Mono (Figma): body text / inactive menu / timer = Regular 400,
+   buttons / pager / image labels = Medium 500, links / active menu / bubbles / data rows = Bold 700 */
+.im   { font-family: var(--f-im);   font-weight: 400; }   /* Input Mono Regular */
+.im-m { font-family: var(--f-im);   font-weight: 500; }   /* Input Mono Medium */
+.im-b { font-family: var(--f-im);   font-weight: 700; }   /* Input Mono Bold */
 .plex { font-family: var(--f-plex); font-weight: 400; }
 .kr   { font-family: var(--f-kr);   font-weight: 400; }
 .blue { color: var(--blue-03); }
@@ -99,7 +101,7 @@ p { overflow-wrap: break-word; }
   width: 168px; height: 52px; margin-right: -1px;
   display: flex; align-items: center; justify-content: center;
   border: 1px solid #000; border-radius: 16px 16px 0 0; overflow: hidden;
-  font-family: var(--f-im); font-weight: 500; font-size: 18px; line-height: 18px;
+  font-family: var(--f-im); font-weight: 400; font-size: 18px; line-height: 18px;
   color: #000; text-decoration: none; text-align: center;
 }
 .menu-btn:last-child { margin-right: 0; }
@@ -111,7 +113,7 @@ p { overflow-wrap: break-word; }
   border: 1px solid #000; border-bottom: 0;
   background: linear-gradient(to top, #dfdfdf, #999);
   box-shadow: inset 2px 4px 4px rgba(0, 0, 0, .3);
-  font-family: var(--f-im); font-weight: 500; font-size: 20px; line-height: 36px;
+  font-family: var(--f-im); font-weight: 400; font-size: 20px; line-height: 36px;
   font-variant-numeric: tabular-nums;
 }
 
